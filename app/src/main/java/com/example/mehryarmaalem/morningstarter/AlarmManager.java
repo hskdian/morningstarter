@@ -9,16 +9,54 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+// Calander and Util packages
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
+
 public class AlarmManager extends AppCompatActivity {
 
+    public Date alarmDate;
+    public String alarmId;
+    public ArrayList<Boolean> frequencies;
+    public boolean repeat;
+
+    // Constructor for AlarmManager
+    public AlarmManager(){
+
+    }
+
+    // get the ID for the Alarm
+    public String getID(){
+        return alarmId;
+    }
+
+    // change the date
+    public void modifyDate(Date date){
+        alarmDate = date;
+    }
+
+    // add a frequency
+    public void addFrequency(Boolean frequency){
+        frequencies.add(frequency);
+    }
+    // remove a frequency
+    public void removeFrequency(Boolean frequency){
+        frequencies.remove(frequency);
+    }
+    public void modifyRepeat(Boolean repeat){
+        repeat = this.repeat;
+    }
     @Override
+    // TODO : UI Features
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_manager);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
