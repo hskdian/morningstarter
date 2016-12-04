@@ -13,41 +13,24 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Map;
 
 
 public class AlarmManager extends AppCompatActivity {
 
-    public Date alarmDate;
-    public String alarmId;
-    public ArrayList<Boolean> frequencies;
-    public boolean repeat;
+    public Map<String, AlarmManager> alarmManagerMap;
 
     // Constructor for AlarmManager
     public AlarmManager(){
 
     }
 
+    public void addAlarmSystem(){
+
+    }
+
     // get the ID for the Alarm
-    public String getID(){
-        return alarmId;
-    }
 
-    // change the date
-    public void modifyDate(Date date){
-        alarmDate = date;
-    }
-
-    // add a frequency
-    public void addFrequency(Boolean frequency){
-        frequencies.add(frequency);
-    }
-    // remove a frequency
-    public void removeFrequency(Boolean frequency){
-        frequencies.remove(frequency);
-    }
-    public void modifyRepeat(Boolean repeat){
-        repeat = this.repeat;
-    }
     @Override
     // TODO : UI Features
     protected void onCreate(Bundle savedInstanceState) {
